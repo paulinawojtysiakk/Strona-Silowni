@@ -1,1 +1,6 @@
-@import './reset.scss';
+@import 'settings/reset';
+@import 'Home';
+@import 'settings/base';
+@import './Header';
+@import './HamburgerMenu';
+@import "CardsSection";

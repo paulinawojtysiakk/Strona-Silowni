@@ -1,11 +1,15 @@
 import React from 'react'
 import '/src/scss/Header.scss'
+import logo from '../images/logo.jpg';
 
 const Header = () => {
     return(
-        <header className="header">
+        <header className="container header-container">
             <nav className="navigation">
-                <div className="nav-logo"><a href="#">Pieniny Fitness</a></div>
+                <div className="nav-logo">
+                    <img src={logo} alt="logo" className="logo"/>
+                    <a href="#">Pieniny Fitness</a>
+                </div>
               <ul>
                   <li className="nav-element"><a href="#">O nas</a></li>
                   <li className="nav-element"><a href="#">Cennik</a></li>

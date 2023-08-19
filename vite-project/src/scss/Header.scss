@@ -1,29 +1,63 @@
-.header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  width: 100%;
+@import './settings/colors';
+@import './settings/_fonts.scss';
 
-  .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+$mobile: 768px;
 
-    ul {
-      list-style: none;
-      padding: 0;
+.header-container{
+    display: none;
+    font-family: $text-font;
+    color: $basic-text-color;
+    background-color: $background-screen-color;
+
+  @media (min-width: $mobile) {
+    display: block;
+  }
+    padding: 10px;
+    width: 100%;
+
+    .navigation {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      color: $basic-text-color;
+      font-size: 18px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      position: sticky;
+      z-index: 100;
 
-      li {
-        margin-right: 10px;
+      .nav-logo{
+        margin: 20px;
+        font-family: $logo-font;
+        font-weight: bold;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        .logo{
+          max-width: 150px;
+          height: auto;
+          margin-right: 10px;
+        }
       }
 
+      ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
 
-      a {
-        color: white;
-        text-decoration: none;
+        li {
+          margin:20px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        a {
+          text-decoration: none;
+
+        }
+
       }
     }
   }
-}
+

@@ -1,0 +1,54 @@
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  top: 20px; // Adjust this value to control the vertical positioning
+  left: 20px;
+
+&.open .bar {
+    transform: rotate(180deg);
+    background-color: #333;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 25px; // Adjust this value to control the vertical positioning
+  right: 0px;
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 10px;
+
+  &.active {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+  }
+}
