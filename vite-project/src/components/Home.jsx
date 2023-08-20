@@ -11,9 +11,10 @@ const Home = () => {
         <div className="container home-container">
             <Header />
             <div className='image-container'>
-            <img src={threadmill} alt="threadmill"/>
+                <img src={threadmill} alt="threadmill"/>
             </div>
-            <Button variant="outlined">Zapisz się!</Button>
+            <div className='btn-container'>
+                <Button variant="outlined" className='btn-cta-home'>Zapisz się!</Button> </div>
             <CardsSection/>
             <Footer />
 
