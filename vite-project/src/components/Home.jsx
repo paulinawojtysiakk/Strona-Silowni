@@ -14,6 +14,8 @@ const Home = () => {
                 <img src={threadmill} alt="threadmill"/>
             </div>
             <div className='btn-container'>
+                <p className='btn-description'>Jeśli chcesz sprawdzić jak wygląda nasza siłownia oraz zapoznać się z trenerami,
+                    możesz umówić się na próbną sesję treningową bez zobowiązań!</p>
                 <Button variant="outlined" className='btn-cta-home'>Zapisz się!</Button> </div>
             <CardsSection/>
             <Footer />

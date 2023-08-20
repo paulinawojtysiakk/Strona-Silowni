@@ -1,10 +1,31 @@
+@import "./settings/colors";
 
+$list1: $gradient-background-dark, $gradient-background-lighter, $gradient-background-light;
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
 .btn-container{
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.4);
+  @include gradient(right, $list1);
 
 .btn-cta-home {
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 10px 50px;
+  }
+
+  .btn-description{
+    max-width: 550px;
+    margin-right: 30px;
+    color: $navigation;
+    font-weight: bold;
+    text-align: center;
   }
 }
