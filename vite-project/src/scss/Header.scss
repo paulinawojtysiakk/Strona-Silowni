@@ -8,6 +8,9 @@ $mobile: 768px;
     font-family: $text-font;
     color: $basic-text-color;
     background-color: $background-screen-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
   @media (min-width: $mobile) {
     display: block;
@@ -23,8 +26,7 @@ $mobile: 768px;
       font-size: 18px;
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
-      position: sticky;
-      z-index: 100;
+
 
       .nav-logo{
         margin: 20px;

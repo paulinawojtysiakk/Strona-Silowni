@@ -1,5 +1,6 @@
 @import "./settings/colors";
 
+
 $list1: $gradient-background-dark, $gradient-background-lighter, $gradient-background-light;
 @mixin gradient($direction, $list) {
   background: -webkit-linear-gradient($direction, $list);
@@ -8,6 +9,8 @@ $list1: $gradient-background-dark, $gradient-background-lighter, $gradient-backg
   background: linear-gradient($direction, $list);
 }
 .btn-container{
+  margin-bottom: 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +19,8 @@ $list1: $gradient-background-dark, $gradient-background-lighter, $gradient-backg
   @include gradient(right, $list1);
 
 .btn-cta-home {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   padding: 10px 50px;
   }
 
