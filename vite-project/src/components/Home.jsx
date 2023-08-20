@@ -5,6 +5,7 @@ import Footer from './Footer.jsx';
 import Button from '@mui/material/Button';
 import threadmill from '../images/threadmill.jpg';
 import CardsSection from "./CardsSection.jsx";
+import AboutSection from "./AboutSection.jsx";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
                 <p className='btn-description'>Jeśli chcesz sprawdzić jak wygląda nasza siłownia oraz zapoznać się z trenerami,
                     możesz umówić się na próbną sesję treningową bez zobowiązań!</p>
                 <Button variant="outlined" className='btn-cta-home'>Zapisz się!</Button> </div>
+            <AboutSection/>
             <CardsSection/>
             <Footer />
 
