@@ -1,156 +1,97 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import React from 'react';
+import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 
-function createData(name, calories, fat, carbs, protein, price) {
-    return {
-        name,
-        calories,
-        fat,
-        carbs,
-        protein,
-        price,
-        history: [
-            {
-                date: '2020-01-05',
-                customerId: '11091700',
-                amount: 3,
-            },
-            {
-                date: '2020-01-02',
-                customerId: 'Anonymous',
-                amount: 1,
-            },
-        ],
-    };
-}
+const supabase = createClient("https://cythikxqaebbgntxzokp.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5dGhpa3hxYWViYmdudHh6b2twIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTI4OTQ4MDksImV4cCI6MjAwODQ3MDgwOX0.hZU2Ycus9mpt2MzkGGACaHAGIAJi96nfpQ4m_-MkpFs");
 
-function Row(props) {
-    const { row } = props;
-    const [open, setOpen] = React.useState(false);
+function TableSchedule() {
+        const [gymClasses, setGymClasses] = useState([]);
 
-    return (
-        <React.Fragment>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-                <TableCell>
-                    <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(!open)}
+        useEffect(() => { getGymClasses();
+            const channel = supabase
+                .channel("gymClasses")
+                .on(
+                    'postgres_changes',
+                    {
+                        event: 'UPDATE',
+                        schema: 'public',
+                    },
+                    (payload) => {
+                    console.log("Subscription update:", payload);
+                    getGymClasses();
+                })
+                .subscribe();
+
+            return () => {
+                channel.unsubscribe();
+            };
+        }, []);
+
+        async function getGymClasses() {
+            const { data } = await supabase.from("gymClasses").select();
+            setGymClasses(data);
+        }
+
+        return (
+            <div>
+                <h2 style={{ textAlign: "center", padding:'10px'}}><strong>Zajęcia Grupowe</strong></h2>
+                <ul style={{ listStyle: "none"}}>
+                    <li
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            borderBottom: "1px solid #ccc",
+                            padding: "15px 0",
+                            fontWeight: "bold",
+                        }}
                     >
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
-                </TableCell>
-                <TableCell component="th" scope="row">
-                    {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-            <TableRow>
-                <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ margin: 1 }}>
-                            <Typography variant="h6" gutterBottom component="div">
-                                History
-                            </Typography>
-                            <Table size="small" aria-label="purchases">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>Date</TableCell>
-                                        <TableCell>Customer</TableCell>
-                                        <TableCell align="right">Amount</TableCell>
-                                        <TableCell align="right">Total price ($)</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {row.history.map((historyRow) => (
-                                        <TableRow key={historyRow.date}>
-                                            <TableCell component="th" scope="row">
-                                                {historyRow.date}
-                                            </TableCell>
-                                            <TableCell>{historyRow.customerId}</TableCell>
-                                            <TableCell align="right">{historyRow.amount}</TableCell>
-                                            <TableCell align="right">
-                                                {Math.round(historyRow.amount * row.price * 100) / 100}
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </Box>
-                    </Collapse>
-                </TableCell>
-            </TableRow>
-        </React.Fragment>
-    );
-}
+                        <div style={{flex:1, padding: '10px' }}>Zajęcia</div>
+                        <div style={{ flex: 1 }}>Czas</div>
+                        <div style={{ flex: 1 }}>Dla kogo</div>
+                        <div style={{ flex: 1 }}>Cel</div>
+                        <div style={{ flex: 1}} >Zapisanych osób</div>
+                        <div style={{ flex: 1 }} >Wolnych miejsc</div>
 
-Row.propTypes = {
-    row: PropTypes.shape({
-        calories: PropTypes.number.isRequired,
-        carbs: PropTypes.number.isRequired,
-        fat: PropTypes.number.isRequired,
-        history: PropTypes.arrayOf(
-            PropTypes.shape({
-                amount: PropTypes.number.isRequired,
-                customerId: PropTypes.string.isRequired,
-                date: PropTypes.string.isRequired,
-            }),
-        ).isRequired,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        protein: PropTypes.number.isRequired,
-    }).isRequired,
-};
+                    </li>
+                    {gymClasses.map((gymClass) => (
+                        <li
+                            key={gymClass.name}
+                            style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                borderBottom: "1px solid #ccc",
+                                padding: "10px 0",
+                            }}
+                        >
+                            <div style={{flex: 1 }}>{gymClass.name}</div>
+                            <div style={{ flex: 1 }}>{gymClass.time}</div>
+                            <div style={{ flex: 1 }}>{gymClass.who}</div>
+                            <div style={{ flex: 1 }}>{gymClass.goal}</div>
+                            <div style={{ flex: 1, textAlign:'center'  }}>{gymClass.participants}</div>
+                            <div style={{ flex: 1, textAlign:'center'  }}>
+                                {Math.max(gymClass.total_places - gymClass.participants, 0)}
+                            </div>
 
-const rows = [
-    createData('Yoga', 90, 'dla wszystkich / dla seniorów', 2/5, 'sprawność fizyczna, zdrowie i ' +
-        'odporność,redukcja stresów i napięć, zdrowe plecy.', 3.79),
-    createData('Pilates', 60, 'dla wszystkich', 3/5, 'zdrowie i odporność, redukcja' +
-        ' stresów i napięć, zdrowe plecy', 2.5),
-    createData('Spinning', 45, 'dla średnio-zaawansowanych', 4/5, 'sylwetka damska, sprawność fizyczna, ' +
-        'zdrowie i odporność, płaski brzuch, zdrowe plecy, redukcja stresu i napięć', 1.5),
-    createData('Brzuch i stretch', 60, 'dla rozpoczynających treningi', 2/5, 'sylwetka damska, sprawność fizyczna, ' +
-        'zdrowie i odporność, płaski brzuch, zdrowe plecy, redukcja stresu i napięć', 4.99),
-    createData('Full Body Workout', 75, 'dla zaawansowanych', 5/5, 'sylwetka damska, sylwetka męska, sprawność fizyczna, ' +
-        'zdrowie i odporność, płaski brzuch, zgrabne pośladki, zgrabne nogi' , 3.99),
-];
 
-export default function CollapsibleTable() {
-    return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell />
-                        <TableCell>Zajęcia Grupowe</TableCell>
-                        <TableCell align="right">Czas trwania</TableCell>
-                        <TableCell align="right">Dla kogo</TableCell>
-                        <TableCell align="right">Intensywność</TableCell>
-                        <TableCell align="right">Efekty</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <Row key={row.name} row={row} />
+                        </li>
                     ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    );
-}
+                </ul>
+            </div>
+
+        );
+    }
+
+export default TableSchedule;
+
+
+
+
+
+
+
+
+
+
+
