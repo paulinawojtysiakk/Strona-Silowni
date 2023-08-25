@@ -1,0 +1,55 @@
+@import "./settings/colors";
+
+
+.about-us-container {
+  padding-top: 30px;
+  text-align: justify;
+
+  .about-us-title-fit {
+    padding: 30px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .about-us-text {
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .about-us-description{
+      max-width: 570px;
+      padding: 30px;
+
+    }
+  }
+
+
+  $list1: $gradient-background-dark, $gradient-background-lighter, $gradient-background-light;
+  @mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);
+  }
+
+  .blog-training-container {
+    padding: 70px;
+    margin-bottom: 40px;
+    border: 2px #f0eaf8 solid;
+    border-radius: 3px;
+    box-shadow: 1px 2px 20px rgba(160, 121, 250, 0.86);
+    @include gradient(right, $list1);
+    color: $navigation;
+
+    .about-us-title-top {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .about-us-title {
+      padding: 30px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}

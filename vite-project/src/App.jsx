@@ -23,8 +23,8 @@ const App = () => {
                     <Route path='/pricing' element={<Pricing />} />
                     <Route path='/schedule' element={<Schedule />} />
                     <Route path='/contact' element={<Contact />} />
-
                 </Routes>
+
             </BrowserRouter>
 
     );
