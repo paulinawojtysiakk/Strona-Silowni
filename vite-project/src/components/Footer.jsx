@@ -1,6 +1,7 @@
 import React from 'react';
 import '/src/scss/Footer.scss'
 import logo from '../images/logo.jpg';
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -9,8 +10,8 @@ const Footer = () => {
                 <div className='footer-box'>
                 <img src={logo} alt="logo" className="logo"/>
                 <ul className='footer-list'>
-                    <li>Zapisz się!</li>
-                    <li>Znajdź nas</li>
+                    <li><Link to="/schedule">Sprawdź nasze zajęcia</Link></li>
+                    <li><Link to="/contact">Skontaktuj się z nami!</Link></li>
                 </ul>
                 </div>
             </div>

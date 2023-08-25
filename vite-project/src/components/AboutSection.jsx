@@ -16,7 +16,16 @@ const AboutSection = () =>{
                                 Nasze zajęcia grupowe
                             </Typography>
                         <Typography variant="h6" component="div">
-                            Trening funkcjonalny
+                            Yoga
+                        </Typography>
+                        <Typography variant="body2" className='classes-card-description' sx={{ marginTop: '10px' }}>
+                            Trening mentalny ukierunkowany na poprawę wytrzymałości psychicznej oraz redukcję stresu.
+                            W czasie zajęć wykonywane są ćwiczenia oddechowe, relaksacyjne oraz fizyczne o niskiej intensywności. Osoby początkujące mogą sięgnąć w czasie ćwiczeń po specjalne kostki do jogi ułatwiające przyjęcie i utrzymanie pozycji. Joga pomaga w kontroli emocji i osiąganiu równowagi psychofizycznej.
+                            Ćwiczenia wspomagają pracę nad sylwetką, prowadzą do usprawnienia całego ciała, znacząco poprawiają gibkość.
+                        </Typography>
+
+                        <Typography variant="h6" component="div">
+                            Full Body Workout
                         </Typography>
                         <Typography variant="body2" className='classes-card-description' sx={{ marginTop: '10px' }}>
                             Są to zajęcia specjalistyczne, których celem jest ogólne usprawnienie ciała.
@@ -34,14 +43,6 @@ const AboutSection = () =>{
                             Jeden trening składa się z trzech etapów – rozgrzewka, część główna, stretching.
                         </Typography>
 
-                        <Typography variant="h6" component="div">
-                            Yoga
-                        </Typography>
-                        <Typography variant="body2" className='classes-card-description' sx={{ marginTop: '10px' }}>
-                            Trening mentalny ukierunkowany na poprawę wytrzymałości psychicznej oraz redukcję stresu.
-                            W czasie zajęć wykonywane są ćwiczenia oddechowe, relaksacyjne oraz fizyczne o niskiej intensywności. Osoby początkujące mogą sięgnąć w czasie ćwiczeń po specjalne kostki do jogi ułatwiające przyjęcie i utrzymanie pozycji. Joga pomaga w kontroli emocji i osiąganiu równowagi psychofizycznej.
-                            Ćwiczenia wspomagają pracę nad sylwetką, prowadzą do usprawnienia całego ciała, znacząco poprawiają gibkość.
-                        </Typography>
                     </CardContent>
                 </Card>
 
