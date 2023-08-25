@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import '/src/scss/CardsSection.scss'
-
+import {Link} from 'react-router-dom';
 export default function StaticCards() {
     return (
         <div className='container cards-container'>
@@ -20,11 +20,11 @@ export default function StaticCards() {
                         Bądź porannym ptaszkiem, dołącz do naszej siłowni i trenuj u nas w godzinach od 7:00 do 16:00!
                     </Typography>
                     <Typography variant="body2" className='card-price' sx={{ marginTop: '10px' }}>
-                        59zł
+                        59 zł
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" className='btn-card'>Wybieram i kupuję!</Button>
+                    <Button size="small" className='btn-card'><Link to='/contact'>Wybieram i kupuję!</Link></Button>
                 </CardActions>
             </Card>
             <Card variant="outlined" className='card-single' sx={{ width: '30%', marginBottom: '15px' }}>
@@ -36,11 +36,11 @@ export default function StaticCards() {
                         Nie miej ograniczeń czasowych, trenuj o dowolnej godzinie, aż do 23:00! Korzystaj z naszych zajęć grupowych!
                     </Typography>
                     <Typography variant="body2" className='card-price' sx={{ marginTop: '10px' }}>
-                        99zł
+                        99 zł
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" className='btn-card'>Wybieram i kupuję!</Button>
+                    <Button size="small" className='btn-card'><Link to='/contact'>Wybieram i kupuję!</Link></Button>
                 </CardActions>
             </Card>
             <Card variant="outlined" className='card-single' sx={{ width: '30%', marginBottom: '15px' }}>
@@ -52,11 +52,11 @@ export default function StaticCards() {
                         Trenuj samodzielnie lub z naszymi trenerami kiedy tylko potrzebujesz. Korzystaj z zajęć grupowych w ciągu całego tygodnia!
                     </Typography>
                     <Typography variant="body2" className='card-price' sx={{ marginTop: '10px' }}>
-                        199zł
+                        199 zł
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" className='btn-card'>Wybieram i kupuję!</Button>
+                    <Button size="small" className='btn-card'><Link to='/contact'>Wybieram i kupuję!</Link></Button>
                 </CardActions>
             </Card>
         </Box>

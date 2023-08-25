@@ -1,8 +1,13 @@
+@import './settings/colors';
+@import './settings/_fonts.scss';
+
 .menu-icon {
   display: none;
   cursor: pointer;
-  top: 20px; // Adjust this value to control the vertical positioning
-  left: 20px;
+  top: 40px;
+  left: 40px;
+  height: 60px;
+  padding: 20px;
 
 &.open .bar {
     transform: rotate(180deg);
@@ -26,11 +31,11 @@
 .nav {
   display: none;
   position: absolute;
-  top: 25px; // Adjust this value to control the vertical positioning
+  top: 60px;
   right: 0px;
   background-color: #f0f0f0;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
 
   &.active {
     display: block;
@@ -42,8 +47,12 @@
     margin: 0;
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
 
+      &:hover{
+        text-decoration: underline;
+
+      }
       a {
         text-decoration: none;
         color: #333;

@@ -4,13 +4,33 @@
   margin-bottom: 40px;
 
   .classes-cards{
-    padding: 40px 20px;
+    padding: 50px 80px;
   }
   .classes-title{
     padding-bottom: 20px;
   }
   .classes-card-description{
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .classes-card-desc-text{
+      max-width: 700px;
+      text-align: justify;
+      padding-right: 15px;
+    }
+    .classes-yoga-img{
+      max-height: 180px;
+      border-radius: 3px;
+    }
+    .classes-workout-img{
+      max-height: 180px;
+      border-radius: 3px;
+    }
+    .classes-workout2{
+      max-height: 180px;
+      border-radius: 3px;
+    }
   }
 
 }

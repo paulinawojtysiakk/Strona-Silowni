@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {NavLink} from "react-router-dom";
 const HamburgerMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => {
@@ -12,10 +13,11 @@ const HamburgerMenu = () => {
             <div className="bar"></div>
             <nav className={`nav ${menuOpen ? 'active' : ''}`}>
                 <ul>
-                    <li><a href="#">O nas</a></li>
-                    <li><a href="#">Cennik</a></li>
-                    <li><a href="#">Kalendarz zajęć</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li className="nav-element"><NavLink to="/">Strona Główna</NavLink></li>
+                    <li className="nav-element"><NavLink to="/about">O nas</NavLink></li>
+                    <li className="nav-element"><NavLink to="/pricing">Cennik</NavLink></li>
+                    <li className="nav-element"><NavLink to="/schedule">Kalendarz zajęć</NavLink></li>
+                    <li className="nav-element"><NavLink to="/contact">Kontakt</NavLink></li>
                 </ul>
             </nav>
         </div>
