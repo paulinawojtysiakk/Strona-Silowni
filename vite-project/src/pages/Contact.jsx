@@ -8,6 +8,8 @@ import { useState } from 'react';
 
 function MyForm() {
     const [inputs, setInputs] = useState({});
+    const [notification, setNotification] = useState('');
+
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -18,6 +20,8 @@ function MyForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(inputs);
+        setNotification('Twój email został wysłany');
+
     }
 
     return (
@@ -39,6 +43,7 @@ function MyForm() {
                 />
             </label>
             <input type="submit" />
+            {notification && <p className='notification-email'>{notification}</p>}
         </form>
     )
 }
