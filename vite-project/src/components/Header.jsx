@@ -5,7 +5,7 @@ import logo from '../images/logo.jpg';
 
 const Header = () => {
     return(
-        <header className="container header-container">
+        <header className="header-container">
             <nav className="navigation">
                 <div className="nav-logo">
                     <img src={logo} alt="logo" className="logo"/>

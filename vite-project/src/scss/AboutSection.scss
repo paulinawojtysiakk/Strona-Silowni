@@ -15,21 +15,26 @@
     justify-content: space-between;
     align-items: center;
     .classes-card-desc-text{
-      max-width: 700px;
+      max-width: 650px;
       text-align: justify;
       padding-right: 15px;
     }
     .classes-yoga-img{
       max-height: 180px;
       border-radius: 3px;
+      min-width: 150px;
     }
     .classes-workout-img{
       max-height: 180px;
       border-radius: 3px;
+      min-width: 150px;
+
     }
     .classes-workout2{
       max-height: 180px;
       border-radius: 3px;
+      min-width: 150px;
+
     }
   }
 
