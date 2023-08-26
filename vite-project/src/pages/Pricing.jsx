@@ -32,8 +32,8 @@ export default function Pricing() {
         <div className='container pricing-container'>
         <TableContainer component={Paper}>
             <Table className='table-pricing' sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
+                <TableHead >
+                    <TableRow >
                         <TableCell style={{textAlign: 'center', paddingBottom: '30px'}}>Rodzaj Karnetu</TableCell>
                         <TableCell style={{textAlign: 'center', paddingBottom: '30px'}}>Okres</TableCell>
                         <TableCell style={{textAlign: 'center', paddingBottom: '30px'}}>Cena</TableCell>
