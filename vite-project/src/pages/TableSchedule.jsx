@@ -7,14 +7,15 @@ const supabase = createClient("https://cythikxqaebbgntxzokp.supabase.co", "eyJhb
 
 function TableSchedule() {
         const [gymClasses, setGymClasses] = useState([]);
+        const [showAlert, setShowAlert] = useState(false); //poinformowanie użytkownika o pełnej grupie
 
         useEffect(() => { getGymClasses();
-            const channel = supabase
+            const channel = supabase             //ustawienie subskrybcji i updateu z bazy
                 .channel("gymClasses")
                 .on(
                     'postgres_changes',
                     {
-                        event: 'UPDATE',
+                        event: 'UPDATE',  //wybór odpowiedniego eventu z supabase
                         schema: 'public',
                     },
                     payload => {
@@ -24,42 +25,48 @@ function TableSchedule() {
                 .subscribe();
 
             return () => {
-                channel.unsubscribe();
+                channel.unsubscribe();      //funkcja czyści i anuluje subskrypcje channel
             };
         }, []);
 
 
-    async function getGymClasses() {
+    async function getGymClasses() {                //metoda from do zaciągnięcia gymClasses
         const { data, error } = await supabase.from("gymClasses").select();
         if (error) {
             console.error("Error getting gym classes", error.message);
         } else {
-            setGymClasses(data);
+            setGymClasses(data);        //jeśli nie ma błedu, zrob update
         }
     }
 
     async function signUpForClass(classId) {
-        const targetClass = gymClasses.find((item) => item.id === classId);
-        const updatedParticipants = targetClass.participants + 1; // Inkrementacja uczestników
+        const targetClass = gymClasses.find((item) => item.id === classId);    //znajdź zajęcia po id
+        const updatedParticipants = targetClass.participants + 1; // Inkrementacja
 
-        const { data: gymClass, error  } = await supabase
-            .from("gymClasses")
-            .update({
-                signed_up: true,
-                participants: updatedParticipants
+        if (targetClass.total_places < updatedParticipants){ //Jeśli zajęcia są pełne, zwróc error i pokaż komunikat
+            console.log("class is fully booked");
+                setShowAlert(true);
+        } else {                                    //jeśli są miejsca, zrób update bazy
+            const {data: gymClass, error} = await supabase
+                .from("gymClasses")
+                .update({
+                    signed_up: true,
+                    participants: updatedParticipants
 
-            })
-            .eq("id", classId)
-            .single();
+                })
+                .eq("id", classId) //znajdź match id i classid w bazie
+                .single();
 
-        if (error) {
-            console.error("Error signing up", error.message);
-        } else {
-            console.log("Signed up successfully");
-            const updatedClasses = gymClasses.map((item) =>
-                item.id === gymClass.id ? gymClass : item
-            );
-            setGymClasses(updatedClasses);
+            if (error) {
+                console.error("Error signing up", error.message);
+            } else {
+                console.log("Signed up successfully");
+                const updatedClasses = gymClasses.map((item) =>         //zmapuj zaktualizaowane zajęcia
+                    item.id === gymClass.id ? gymClass : item               //porównaj id z signupu do id w bazie i update
+                );
+                setGymClasses(updatedClasses);
+            }
+
         }
     }
 
@@ -136,9 +143,17 @@ function TableSchedule() {
                                 <Button variant='outlined' onClick={() => cancelSignUpForClass(gymClass.id)}>Anuluj</Button>
                             </div>
                         ) : (
-                        <Button variant='outlined' onClick={() => signUpForClass(gymClass.id)}>Zapisuję się!</Button>
-                    )}
+                        <Button variant='outlined' onClick={() => signUpForClass(gymClass.id)}>Zapisuję się!</Button> )}
                     </div>
+
+                        {showAlert && (     // Komunikat o pełnej grupie
+
+                            <div className="alert">
+                            Niestety, wszystkie miejsca są zajęte.
+                            Możesz umówić się telefonicznie na kolejną sesję!
+                            <Button onClick={() => setShowAlert(false)}>Zamknij</Button>
+                        </div> )}
+
                 </li>
                    )}
 
