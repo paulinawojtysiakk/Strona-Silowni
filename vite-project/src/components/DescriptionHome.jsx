@@ -11,7 +11,7 @@ const DescriptionHome = () =>{
         <div className="container description-home-container">
 
             <Box className='' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Card variant="outlined" className='desc-home-text-img' sx={{ width: '100%', marginBottom: '15px' }}>
+                <Card  className='desc-home-text-img' sx={{ width: '100%', marginBottom: '15px' }}>
                     <div>
                         <img src={equipment} alt="gym-equipment" className='equip-img'/>
                     </div>

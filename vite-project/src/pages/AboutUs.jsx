@@ -58,9 +58,9 @@ const AboutUs = () =>{
 
             <h5 className='about-us-title'>5. Bądź konsekwentny</h5>
             <p>Trening siłowy porównać można np. do podróży, w trakcie której przychodzi się nam mierzyć z przeszkodami:
-                <ul>
-                <li>zewnętrznymi (czas, praca, obowiązki rodzinne)</li>
-                <li>wewnętrznymi (kontuzje, przeciążenie i zmęczenie).</li>
+                <ul><br/>
+                <li>- zewnętrznymi (czas, praca, obowiązki rodzinne)</li>
+                <li>- wewnętrznymi (kontuzje, przeciążenie i zmęczenie).</li>
                 </ul>
                 Droga do sukcesu jest długa i wyczerpująca, a nic nie przychodzi szybko i łatwo. Kluczem do wyników jest siła naszego samozaparcia i wszystkie czynniki, które ją potęgują. Tak więc nawet w chwili zastoju, regresów czy spadków masy nie należy się poddawać i trzeba walczyć dalej.
             </p>

@@ -1,21 +1,21 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '/src/scss/Header.scss'
-import logo from '../images/logo.jpg';
+import logo2 from '../images/logo2.png';
 
 const Header = () => {
     return(
         <header className="header-container">
             <nav className="navigation">
                 <div className="nav-logo">
-                    <img src={logo} alt="logo" className="logo"/>
-                    <NavLink to='/'>Pieniny Fitness</NavLink>
+                <Link to='/'>Pieniny Fitness</Link>
+                    <img src={logo2} alt="logo" className="logo"/>
                 </div>
                 <ul>
-                    <li className="nav-element"><NavLink to="/about">O nas</NavLink></li>
-                    <li className="nav-element"><NavLink to="/pricing">Cennik</NavLink></li>
-                    <li className="nav-element"><NavLink to="/schedule">Kalendarz zajęć</NavLink></li>
-                    <li className="nav-element"><NavLink to="/contact">Kontakt</NavLink></li>
+                    <li ><Link to="/about" className="nav-element"> O nas</Link></li>
+                    <li ><Link to="/pricing" className="nav-element">Cennik</Link></li>
+                    <li ><Link to="/schedule" className="nav-element">Kalendarz zajęć</Link></li>
+                    <li ><Link to="/contact" className="nav-element">Kontakt</Link></li>
                 </ul>
             </nav>
         </header>

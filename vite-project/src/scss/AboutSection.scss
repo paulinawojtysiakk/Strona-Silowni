@@ -1,41 +1,56 @@
+@import "./settings/base.scss";
+@import './settings/colors';
+@import './settings/fonts';
 
-.aboutSection-container{
-  margin-top: 40px;
-  margin-bottom: 40px;
+.container .aboutSection-container{
+  margin-bottom: 70px;
+  font-family: $text-font;
+  line-height: 28px;
 
   .classes-cards{
-    padding: 50px 80px;
+    background-color: $background-screen-color;
+    padding: 0 80px;
+    width:100%;
   }
   .classes-title{
-    padding-bottom: 20px;
+    margin: 50px 0;
+    text-align: center;
+    color: $green-dark;
+    font-weight: 500;
+  }
+  .single-card-box{
+    padding: 15px;
+  }
+  .single-class-title{
+    margin-top: 20px;
+    color: $basic-dark;
+    font-weight: 500;
   }
   .classes-card-description{
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
     .classes-card-desc-text{
+      color: $basic-text-color-light;
+      font-family: $text-font;
+      line-height: 28px;
       max-width: 650px;
       text-align: justify;
-      padding-right: 15px;
+      padding-right:10px;
     }
-    .classes-yoga-img{
-      max-height: 180px;
+    .classes-img{
+      max-height: 200px;
       border-radius: 3px;
-      min-width: 150px;
+      border: 1px solid white;
+      box-shadow: 3px 3px 3px rgb(208, 238, 247);
+      max-width: 300px;
+      object-fit: fill;
+      margin-top: 10px;
     }
-    .classes-workout-img{
-      max-height: 180px;
-      border-radius: 3px;
-      min-width: 150px;
-
-    }
-    .classes-workout2{
-      max-height: 180px;
-      border-radius: 3px;
-      min-width: 150px;
-
-    }
+   
   }
 
 }

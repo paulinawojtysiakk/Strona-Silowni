@@ -7,6 +7,8 @@
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
+  font-family: $text-font;
+
 
   img{
     width: 100%;
@@ -17,6 +19,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      font-family: $text-font;
 
       li {
         margin-bottom: 10px;
@@ -32,8 +35,11 @@
 
 body {
   font-family: $text-font;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 100;
   background-color: $background-screen-color;
+  color: $basic-text-color;
 }
 
 a {

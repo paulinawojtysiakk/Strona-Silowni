@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/main.scss';
 import Home from './components/Home'
 import HamburgerMenu from './components/HamburgerMenu.jsx';
 import {
