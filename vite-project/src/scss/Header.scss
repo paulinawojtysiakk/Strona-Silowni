@@ -1,80 +1,77 @@
-@import './settings/colors';
-@import './settings/fonts';
-@import './settings/base.scss';
+@import "./settings/colors";
+@import "./settings/fonts";
+@import "./settings/base.scss";
 
 $mobile: 768px;
 
-.header-container{
+.header-container {
   text-align: center;
-    background-color: $background-screen-color;
-    position: sticky;
-    top: 0;
-    z-index: 100;    
-    width: 100%;
-    padding: 20px 90px;
-    box-shadow: rgba(43, 83, 135, 0.08) 0px 3px 8px 0px;
+  background-color: $background-screen-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 20px 90px;
+  box-shadow: rgba(43, 83, 135, 0.08) 0px 3px 8px 0px;
 
-    .navigation {
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-family: $logo-font;
+
+    .nav-logo {
+      font-weight: 500;
+      color: $basic-dark;
+      font-size: 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 18px;
-      font-family: $logo-font;
+      text-transform: uppercase;
 
-      .nav-logo{
-        font-weight: 500;
-        color: $basic-dark;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        text-transform: uppercase;
-        
-        .logo{
-          max-width: 40px;
-          height: auto;
-          margin-left: 10px;
-        }
-      }
-      .nav-element{
-        color: $basic-dark;
-        font-family: $text-font;
-        font-weight: 400;
-      }
-
-      ul {
-        padding: 0;
-        display: flex;
-        justify-content: space-between;
-
-        li {
-          margin-left: 20px;
-          :hover {
-            color: rgb(63, 130, 134);
-          }
-        
-        }
-
-        a {
-          text-decoration: none;
-          text-transform: uppercase;
-        }
-
+      .logo {
+        max-width: 40px;
+        height: auto;
+        margin-left: 10px;
       }
     }
-    @media (max-width: $mobile) {
-      .navigation {
-        display: none;
-        flex-direction: column;
-        align-items: center;
+    .nav-element {
+      color: $basic-dark;
+      font-family: $text-font;
+      font-weight: 400;
+    }
+
+    ul {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        margin-left: 20px;
+        :hover {
+          color: rgb(63, 130, 134);
+        }
       }
-  
-      .navigation .hamburger-menu {
-        display: flex;
-      }
-  
-      .navigation.active ul {
-        display: flex;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
       }
     }
   }
+  @media (max-width: $mobile) {
+    .navigation {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
 
+    .navigation .hamburger-menu {
+      display: flex;
+    }
+
+    .navigation.active ul {
+      display: flex;
+    }
+  }
+}

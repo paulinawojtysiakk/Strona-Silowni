@@ -1,47 +1,47 @@
 @import "./settings/base.scss";
-@import './settings/colors';
-@import './settings/fonts';
+@import "./settings/colors";
+@import "./settings/fonts";
 
-.container .aboutSection-container{
+.container .aboutSection-container {
   margin-bottom: 70px;
   font-family: $text-font;
   line-height: 28px;
 
-  .classes-cards{
+  .classes-cards {
     background-color: $background-screen-color;
     padding: 0 80px;
-    width:100%;
+    width: 100%;
   }
-  .classes-title{
+  .classes-title {
     margin: 50px 0;
     text-align: center;
     color: $green-dark;
     font-weight: 500;
   }
-  .single-card-box{
+  .single-card-box {
     padding: 15px;
   }
-  .single-class-title{
+  .single-class-title {
     margin-top: 20px;
     color: $basic-dark;
     font-weight: 500;
   }
-  .classes-card-description{
+  .classes-card-description {
     padding-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
-    .classes-card-desc-text{
+    .classes-card-desc-text {
       color: $basic-text-color-light;
       font-family: $text-font;
       line-height: 28px;
       max-width: 650px;
       text-align: justify;
-      padding-right:10px;
+      padding-right: 10px;
     }
-    .classes-img{
+    .classes-img {
       max-height: 200px;
       border-radius: 3px;
       border: 1px solid white;
@@ -50,7 +50,5 @@
       object-fit: fill;
       margin-top: 10px;
     }
-   
   }
-
 }
