@@ -1,17 +1,15 @@
 @import "./settings/colors";
 @import "./settings/base.scss";
 
-
-.image-container{
-
-  .emptygym-img{
-    height: 300px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-}
-.follow-us-box{
+// .image-container {
+  // .emptygym-img {
+  //   height: 300px;
+  //   margin-bottom: 20px;
+  //   border-radius: 5px;
+  //   object-fit: cover;
+  // }
+//}
+.follow-us-box {
   width: 100%;
   color: white;
   background-color: $basic-dark;
@@ -20,20 +18,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .follow-contact{
+  .follow-contact {
     font-size: 12px;
   }
-  .follow-desc{
+  .follow-desc {
     display: flex;
     align-items: center;
     gap: 4px;
     font-size: 12px;
   }
 }
-
-
-.tryout-session-container{
- margin: 50px 0;
+.tryout-session-container {
+  margin: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,13 +37,13 @@
   border-radius: 5px;
   padding: 25px;
 
-.btn-cta-home {
-  margin-top: 20px ;
-  padding: 8px 30px;
-  background-color: $basic-dark;
+  .btn-cta-home {
+    margin-top: 20px;
+    padding: 8px 30px;
+    background-color: $basic-dark;
   }
 
-  .tryout-session-description{
+  .tryout-session-description {
     max-width: 600px;
     font-weight: 400;
     line-height: 40px;

@@ -1,6 +1,5 @@
-@import './fonts';
+@import "./fonts";
 @import "./colors";
-
 
 .container {
   max-width: 1180px;
@@ -9,29 +8,28 @@
   flex-wrap: wrap;
   font-family: $text-font;
 
-
-  img{
+  img {
     width: 100%;
     height: auto;
   }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-family: $text-font;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: $text-font;
 
-      li {
-        margin-bottom: 10px;
+    li {
+      margin-bottom: 10px;
 
-        a {
-          text-decoration: none;
-          color: #333;
-          font-weight: bold;
-        }
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
       }
     }
   }
+}
 
 body {
   font-family: $text-font;

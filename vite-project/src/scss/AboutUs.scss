@@ -1,6 +1,5 @@
 @import "./settings/colors";
 
-
 .about-us-container {
   padding-top: 30px;
   text-align: justify;
@@ -15,15 +14,14 @@
     display: flex;
     justify-content: space-between;
 
-    .about-us-description{
+    .about-us-description {
       max-width: 570px;
       padding: 30px;
-
     }
   }
 
-
-  $list1: $gradient-background-dark, $gradient-background-lighter, $gradient-background-light;
+  $list1: $gradient-background-dark, $gradient-background-lighter,
+    $gradient-background-light;
   @mixin gradient($direction, $list) {
     background: -webkit-linear-gradient($direction, $list);
     background: -moz-linear-gradient($direction, $list);

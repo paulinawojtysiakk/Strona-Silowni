@@ -1,5 +1,5 @@
-@import './settings/colors';
-@import './settings/_fonts.scss';
+@import "./settings/colors";
+@import "./settings/_fonts.scss";
 
 .menu-icon {
   display: none;
@@ -9,10 +9,12 @@
   height: 60px;
   padding: 20px;
 
-&.open .bar {
+  &.open .bar {
     transform: rotate(180deg);
     background-color: #333;
-    transition: transform 0.3s, background-color 0.3s;
+    transition:
+      transform 0.3s,
+      background-color 0.3s;
   }
 
   @media (max-width: 768px) {
@@ -24,7 +26,9 @@
     height: 3px;
     background-color: #333;
     margin: 4px 0;
-    transition: transform 0.3s, background-color 0.3s;
+    transition:
+      transform 0.3s,
+      background-color 0.3s;
   }
 }
 
@@ -49,9 +53,8 @@
     li {
       margin: 15px 0;
 
-      &:hover{
+      &:hover {
         text-decoration: underline;
-
       }
       a {
         text-decoration: none;
