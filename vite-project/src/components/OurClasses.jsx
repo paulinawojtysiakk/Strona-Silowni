@@ -1,19 +1,24 @@
 import React from "react";
 import { Card, CardContent, Divider, Typography } from "@mui/material";
-import "/src/scss/AboutSection.scss";
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import "/src/scss/OurClasses.scss";
 import yoga from "../images/yoga.jpeg";
 import fbworkout from "../images/fbworkout.jpeg";
 import workout2 from "../images/workout2.png";
 
-const AboutSection = () => {
+const OurClasses = () => {
   return (
-    <div className="container aboutSection-container">
+    <div className="container ourClasses-container">
       <Card variant="" className="classes-cards">
         <CardContent>
           <Divider />
+          <div className="classes-title-box">
+            <FitnessCenterIcon fontSize="large" className="classes-bar-icon"/>
           <Typography variant="h5" className="classes-title">
             Nasze zajęcia grupowe
           </Typography>
+          <FitnessCenterIcon fontSize="large" className="classes-bar-icon"/>
+          </div>
           <Divider />
           <div className="single-card-box">
             <Typography variant="h6" className="single-class-title">
@@ -87,4 +92,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default OurClasses;

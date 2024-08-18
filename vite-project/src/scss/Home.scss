@@ -1,14 +1,7 @@
 @import "./settings/colors";
 @import "./settings/base.scss";
 
-// .image-container {
-  // .emptygym-img {
-  //   height: 300px;
-  //   margin-bottom: 20px;
-  //   border-radius: 5px;
-  //   object-fit: cover;
-  // }
-//}
+
 .follow-us-box {
   width: 100%;
   color: white;
@@ -36,6 +29,7 @@
   align-items: center;
   border-radius: 5px;
   padding: 25px;
+  color: $green-dark;
 
   .btn-cta-home {
     margin-top: 20px;

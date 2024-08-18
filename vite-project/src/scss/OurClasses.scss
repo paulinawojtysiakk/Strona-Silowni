@@ -2,7 +2,7 @@
 @import "./settings/colors";
 @import "./settings/fonts";
 
-.container .aboutSection-container {
+.container .ourClasses-container {
   margin-bottom: 70px;
   font-family: $text-font;
   line-height: 28px;
@@ -12,11 +12,22 @@
     padding: 0 80px;
     width: 100%;
   }
-  .classes-title {
+  .classes-title-box {
     margin: 50px 0;
-    text-align: center;
-    color: $green-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+
+    .classes-title{
+    color: $basic-dark;
     font-weight: 500;
+    }
+    .classes-bar-icon{
+      color: $basic-dark;
+      
+    }
   }
   .single-card-box {
     padding: 15px;

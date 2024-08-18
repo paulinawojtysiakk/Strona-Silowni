@@ -8,7 +8,7 @@ import emptygym from "../images/emptygym.jpeg";
 import equipment from "../images/equipment.jpeg";
 import yoga from "../images/yoga.jpeg";
 import CardsSection from "./CardsSection.jsx";
-import AboutSection from "./AboutSection.jsx";
+import OurClasses from "./OurClasses.jsx";
 import DescriptionHome from "./DescriptionHome.jsx";
 import HomeCarousel from "./Carousel.jsx";
 import { Link } from "react-router-dom";
@@ -53,9 +53,9 @@ const Home = () => {
             <Link to="/contact">Zapisz się!</Link>
           </Button>
         </div>
-        <AboutSection />
-        <CardsSection />
         <DescriptionHome />
+        <CardsSection />
+        <OurClasses />
         <Footer />
       </div>
     </>

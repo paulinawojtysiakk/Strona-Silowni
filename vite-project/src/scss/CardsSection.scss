@@ -22,12 +22,14 @@
 
     &:hover {
       font-weight: bold;
-      border: 1px papayawhip solid;
+      box-shadow: 2px 3px 3px 1px $basic-dark;
       border-radius: 8px;
     }
 
     .card-title {
       color: $green-dark;
+      font-family: $sales-font;
+      font-weight: 600;
     }
     .card-description {
       text-align: left;
@@ -40,6 +42,7 @@
       font-size: 22px;
       font-weight: bold;
       padding-top: 10px;
+      font-family: $sales-font;
     }
 
     .btn-card {

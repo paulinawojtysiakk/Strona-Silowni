@@ -1,28 +1,53 @@
-.description-home-container {
-  margin-top: 40px;
-  margin-bottom: 80px;
+@import "./settings/colors";
+@import './settings/base.scss';
+@import "./settings/fonts";
 
-  .desc-home-text-img {
+.container .description-home-container {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $basic-dark;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+
+  .desc-home-title{
+    text-align:center;
+    margin-bottom: 20px;
+    font-family: $sales-font;
+}
+  .desc-home-title-single{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding: 50px 60px;
-
-    .equip-img {
-      border-radius: 3px;
-    }
-  }
-  .desc-home-text {
-    max-width: 550px;
-    padding-left: 30px;
+    gap:10px;
+}
+  .desc-home-box {
+    padding-left: 25px;
   }
 
   .desc-home-info {
-    padding-bottom: 10px;
+    padding: 10px 35px;
+    line-height: 30px;
+    font-family: $sales-font;
 
     .desc-home-list {
       list-style: disc;
       padding-left: 20px;
+      font-family: $sales-font;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+  }
+}
+
+.desc-home-img {
+  border: 1px solid white;
+  box-shadow: 1px 1px 3px rgb(218, 217, 217);
+  border-radius: 5px;
+  .equip-img {
+    border-radius: 3px;
+    width: auto;
   }
 }

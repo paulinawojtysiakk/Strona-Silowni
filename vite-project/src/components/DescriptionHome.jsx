@@ -1,70 +1,64 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
+import {Card, CardContent, Typography} from "@mui/material";
 import "/src/scss/DescriptionHome.scss";
 import equipment from "../images/equipment.jpeg";
+import DescriptionIcon from '@mui/icons-material/Description';
+import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import DoneIcon from '@mui/icons-material/Done';
 
 const DescriptionHome = () => {
   return (
-    <div className="container description-home-container">
-      <Box
-        className=""
-        sx={{ display: "flex", justifyContent: "space-between" }}
-      >
-        <Card
-          className="desc-home-text-img"
-          sx={{ width: "100%", marginBottom: "15px" }}
-        >
-          <div>
-            <img src={equipment} alt="gym-equipment" className="equip-img" />
-          </div>
-          <CardContent className="desc-home-text">
-            <Typography variant="h6" component="div">
-              Zamrożenie karnetu
-            </Typography>
+    <>
+        <Card className="container description-home-container">
+          <CardContent className="desc-home-box">
+            <Typography variant="h4" className="desc-home-title">Trenowanie na naszej siłowni jest proste!</Typography>
+            <div className="desc-home-title-single">
+            <DescriptionIcon/> 
+            <Typography variant="h6" >      Zarządzanie karnetem   </Typography>
+            </div>
             <Typography
               variant="body2"
               className="desc-home-info"
-              sx={{ marginTop: "10px" }}
             >
-              Niezależnie od powodu możesz w dowolnym momencie zawiesić swoje
+             Niezależnie od powodu, możesz w dowolnym momencie zmienić swój wykupiony karnet na mniejszy lub większy, dodać treningi lub zawiesić swoje
               członkostwo w Pieniny Fitness.
             </Typography>
-
-            <Typography variant="h6" component="div">
-              Nasi najmłodsi
-            </Typography>
+            <div className="desc-home-title-single">
+              <SportsGymnasticsIcon/>
+            <Typography variant="h6">
+              Trenuj od najmłodszych lat
+                 </Typography>
+                 </div>
             <Typography
               variant="body2"
               className="desc-home-info"
-              sx={{ marginTop: "10px" }}
             >
               Jeśli masz ukończone 16 lat, to na luzie możesz trenować w naszym
               klubie. Wystarczy, że Twój rodzic lub opiekun prawny wypełni
               oświadczenie.
             </Typography>
-
-            <Typography variant="h6" component="div">
-              Nie martw się o detale
-            </Typography>
+            <div className="desc-home-title-single">
+              <CheckBoxIcon />
+            <Typography variant="h6" >Nie martw się o detale  </Typography>
+            </div>
             <Typography
               variant="body2"
               className="desc-home-info"
-              sx={{ marginTop: "10px" }}
-            >
-              <ul className="desc-home-list">
-                <li>Darmowy parking</li>
-                <li>Bezpłatne wifi</li>
-                <li>Treningi bez limitów</li>
-                <li>Prosta umowa</li>
-              </ul>
+            >  W naszej siłowni zadbaliśmy o małe rzeczy abyś mógł skupić się na swoim planie treningowym:
+
+              <div className="desc-home-list"> <DoneIcon/> Prosta umowa</div>
+                <div className="desc-home-list"> <DoneIcon/> Bezpłatne wifi</div>
+                <div className="desc-home-list"> <DoneIcon/> Darmowy parking</div>
+                <div className="desc-home-list"> <DoneIcon/> Treningi umawiane w kalendarzu online</div>
             </Typography>
           </CardContent>
         </Card>
-      </Box>
-    </div>
+
+        {/* <div className="desc-home-img" >
+            <img src={equipment} alt="gym-equipment" className="equip-img" />
+          </div> */}
+    </>
   );
 };
 
