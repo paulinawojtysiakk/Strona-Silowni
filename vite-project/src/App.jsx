@@ -8,6 +8,7 @@ import Header from "./components/Header.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Schedule from "./pages/Schedule.jsx";
 import Contact from "./pages/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
