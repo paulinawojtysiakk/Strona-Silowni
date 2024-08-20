@@ -31,9 +31,10 @@
   }
   .single-card-box {
     padding: 15px;
+    margin-top: 20px;
+
   }
   .single-class-title {
-    margin-top: 20px;
     color: $basic-dark;
     font-weight: 500;
   }
@@ -60,6 +61,26 @@
       max-width: 300px;
       object-fit: fill;
       margin-top: 10px;
+    }
+  }
+  .class-signup-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+
+    .single-class-title{
+      margin-bottom: 20px;
+    }
+    .class-signup-description{
+      margin-bottom: 30px;
+      color: $basic-text-color-light;
+    }
+    .class-signup-btn{
+      background-color: $basic-dark;
+      color: white;
+      padding: 15px 25px;
     }
   }
 }

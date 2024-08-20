@@ -1,10 +1,11 @@
 import React from "react";
-import { Card, CardContent, Divider, Typography } from "@mui/material";
+import { Button, Card, CardContent, Divider, Typography } from "@mui/material";
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import "/src/scss/OurClasses.scss";
 import yoga from "../images/yoga.jpeg";
 import fbworkout from "../images/fbworkout.jpeg";
 import workout2 from "../images/workout2.png";
+import {Link} from "react-router-dom";
 
 const OurClasses = () => {
   return (
@@ -86,6 +87,16 @@ const OurClasses = () => {
             </Typography>
           </div>
           <Divider />
+          <div className="class-signup-box">
+                <Typography variant="h6" className='single-class-title' >
+                      Możesz zapisać się na nasze zajęcia poprzez Kalendarz zajęć!              
+                  </Typography>
+                  <Typography variant="body2" className='class-signup-description' >
+                       Wybierz zajęcia, które Tobie odpowiadają i zapisz się na sesję o konkretnym terminie!
+                  </Typography>
+                    <Button className="class-signup-btn"><Link to="./schedule">Zapisz się na zajęcia grupowe </Link></Button>
+             </div>
+         <Divider/>
         </CardContent>
       </Card>
     </div>
