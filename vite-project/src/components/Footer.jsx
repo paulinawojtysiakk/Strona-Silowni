@@ -10,7 +10,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 const Footer = () => {
   return (
-    <>
+  
       <div className="footer-container">
         <div className="footer-box">
           <div className="logo-container">
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
         </div>
       </div>
-    </>
+  
   );
 };
 

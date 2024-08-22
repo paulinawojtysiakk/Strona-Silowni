@@ -36,8 +36,15 @@ body {
   font-size: 16px;
   line-height: 28px;
   font-weight: 100;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
   background-color: $background-screen-color;
   color: $basic-text-color;
+}
+main{
+  flex-grow: 1;
 }
 
 a {

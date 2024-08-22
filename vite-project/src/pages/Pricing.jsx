@@ -16,15 +16,15 @@ const rows = [
     "Zajęcia Light",
     "tydzień",
     "39zł",
-    "Jest to opcja dla nielubiących długich zobowiązań - " +
+    "Karnet krótkoterminowy - " +
       "możesz wykupić u nas pakiet dostępu na tydzień zajęć light i nie martwić się umową.",
-    "Yoga, Pilates, Płaski brzuch",
+    "Yoga i Pilates",
   ),
   createData(
     "Zajęcia Heavy",
     "tydzień",
     "49zł",
-    "Jest to opcja dla nielubiących długich zobowiązań - " +
+    "Karnet krótkoterminowy - " +
       "możesz wykupić u nas pakiet dostępu na tydzień zajęć heavy i nie martwić się umową",
     "Zumba, Spinning, Full Body Workut ",
   ),
@@ -34,7 +34,7 @@ const rows = [
     "59zł",
     "Bądź porannym ptaszkiem, dołącz" +
       " do naszej siłowni i trenuj u nas w godzinach od 7:00 do 16:00!",
-    "Możesz dobrać do tego karnetu zajęcia płaskiego brzucha oraz yogi.",
+    "Zajęcia Płaskiego Brzucha oraz Yogi.",
   ),
   createData(
     "Karnet Regular",
@@ -42,66 +42,60 @@ const rows = [
     "99zł",
     "Nie miej ograniczeń czasowych, trenuj o " +
       "dowolnej godzinie, aż do 23:00! Korzystaj z naszych zajęć grupowych!",
-    "Możesz dobrać do tego karnetu wszystkie zajęcia jakie realizujemy w klubie.",
+    "Uwzględnione są wszystkie zajęcia.",
   ),
   createData(
     "Karnet Pro",
     "miesiąc",
     "199zł",
     "Trenuj samodzielnie lub z naszymi trenerami kiedy tylko potrzebujesz. " +
-      "Korzystaj z zajęć grupowych w ciągu całego tygodnia!",
-    "Możesz dobrać do tego karnetu wszystkie zajęcia oraz otrzymasz wsparcie naszego trenera podczas trenignów na siłowni.",
+      "Korzystaj z zajęć w ciągu całego tygodnia!",
+    "Wszystkie zajęcia oraz wsparcie trenera podczas Twoich treningów.",
   ),
 ];
 
 export default function Pricing() {
   return (
     <div className="container pricing-container">
-      <TableContainer component={Paper}>
-        <Table
-          className="table-pricing"
-          sx={{ minWidth: 650 }}
-          aria-label="simple table"
-        >
+      <TableContainer component={Paper} className="table-pricing">
+        <Table>
           <TableHead>
             <TableRow>
-              <TableCell style={{ textAlign: "center", paddingBottom: "30px" }}>
+              <TableCell className="table-cell-title">
                 Rodzaj Karnetu
               </TableCell>
-              <TableCell style={{ textAlign: "center", paddingBottom: "30px" }}>
+              <TableCell className="table-cell-title">
                 Okres
               </TableCell>
-              <TableCell style={{ textAlign: "center", paddingBottom: "30px" }}>
+              <TableCell className="table-cell-title">
                 Cena
               </TableCell>
-              <TableCell style={{ textAlign: "center", paddingBottom: "30px" }}>
+              <TableCell className="table-cell-title">
                 Opis
               </TableCell>
-              <TableCell style={{ textAlign: "center", paddingBottom: "30px" }}>
+              <TableCell className="table-cell-title">
                 Zajęcia
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody >
             {rows.map((row) => (
               <TableRow
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell align="center" component="th" scope="row">
+                <TableCell component="th" scope="row" className="pricing-content">
                   {row.name}
                 </TableCell>
-                <TableCell align="center">{row.period}</TableCell>
-                <TableCell align="center">{row.price}</TableCell>
+                <TableCell className="pricing-price pricing-content">{row.period}</TableCell>
+                <TableCell className="pricing-content">{row.price}</TableCell>
                 <TableCell
-                  align="right"
-                  style={{ maxWidth: "280px", textAlign: "justify" }}
+                  className="pricing-desc pricing-content"
                 >
                   {row.description}
                 </TableCell>
                 <TableCell
-                  align="right"
-                  style={{ maxWidth: "180px", textAlign: "justify" }}
+                  className="pricing-activity pricing-content"
                 >
                   {row.activity}
                 </TableCell>
