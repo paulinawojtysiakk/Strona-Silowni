@@ -94,7 +94,7 @@ const OurClasses = () => {
                   <Typography variant="body2" className='class-signup-description' >
                        Wybierz zajęcia, które Tobie odpowiadają i zapisz się na sesję o konkretnym terminie!
                   </Typography>
-                    <Button className="class-signup-btn"><Link to="./schedule">Zapisz się na zajęcia grupowe </Link></Button>
+                    <Button className="class-signup-btn"><Link to="./schedule">Zapisz się na zajęcia grupowe</Link></Button>
              </div>
          <Divider/>
         </CardContent>

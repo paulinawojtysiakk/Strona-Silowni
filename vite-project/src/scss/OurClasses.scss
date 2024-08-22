@@ -81,6 +81,9 @@
       background-color: $basic-dark;
       color: white;
       padding: 15px 25px;
+      &:hover{
+        background-color: $button-light;
+      }
     }
   }
 }
