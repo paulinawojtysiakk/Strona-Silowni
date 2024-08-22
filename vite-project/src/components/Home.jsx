@@ -1,6 +1,5 @@
 import React from "react";
 import "/src/scss/Home.scss";
-import Footer from "./Footer.jsx";
 import { Button, Box, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -56,7 +55,6 @@ const Home = () => {
         <DescriptionHome />
         <CardsSection />
         <OurClasses />
-        <Footer />
       </div>
     </>
   );
