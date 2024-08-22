@@ -5,28 +5,18 @@ import emptygym from "../images/emptygym.jpeg";
 const AboutUs = () => {
   return (
     <div className="container about-us-container">
-      <h4 className="about-us-title-fit">Siłownia Pieniny Fitness</h4>
 
       <div className="about-us-text">
-        <div className="gym-img">
-          <img src={emptygym} alt="gym" />
+        <div>
+          <img src={emptygym} alt="gym" className="gym-img"/>
         </div>
+
         <ul className="about-us-description">
           Jesteśmy siłownią działającą na terenie Krościenka nad Dunajcem od
           2022 roku.
           <li>
-            {" "}
             Mamy ponad 13 lat bogatego doświadczenia w spersonalizowanych
             treningach oraz 14 trenerów na dowiedzenie swoich przekonań!
-          </li>
-          <li>
-            Co tydzień organizujemy regularne zajęcia z yogi, pilatesu, zumby,
-            treningów brzucha oraz całego ciała.
-          </li>
-          <li>
-            Mamy możliwość dostosowania karnetów do wielu przedziałów
-            godzinowych oraz politykę łatwego pauzowania karnetu na rzecz
-            wyjazdów i niespodziewanych planów.
           </li>
           <li>
             Nasz klub fitness oferuje również szerokie wsparcie trenerów
@@ -116,11 +106,10 @@ const AboutUs = () => {
         <p>
           Trening siłowy porównać można np. do podróży, w trakcie której
           przychodzi się nam mierzyć z przeszkodami:
-          <ul>
             <br />
-            <li>- zewnętrznymi (czas, praca, obowiązki rodzinne)</li>
-            <li>- wewnętrznymi (kontuzje, przeciążenie i zmęczenie).</li>
-          </ul>
+            - zewnętrznymi (czas, praca, obowiązki rodzinne)<br/>
+            - wewnętrznymi (kontuzje, przeciążenie i zmęczenie).<br/>
+      
           Droga do sukcesu jest długa i wyczerpująca, a nic nie przychodzi
           szybko i łatwo. Kluczem do wyników jest siła naszego samozaparcia i
           wszystkie czynniki, które ją potęgują. Tak więc nawet w chwili
