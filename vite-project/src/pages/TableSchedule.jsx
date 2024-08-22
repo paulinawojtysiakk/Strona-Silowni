@@ -180,7 +180,7 @@ function TableSchedule() {
               <div className="alert">
                 Niestety, wszystkie miejsca są zajęte. Możesz umówić się
                 telefonicznie na kolejną sesję!
-                <Button onClick={() => setShowAlert(false)}>Zamknij</Button>
+                <Button variant="outlined" onClick={() => setShowAlert(false)}>Zamknij</Button>
               </div>
             )}
           </li>
