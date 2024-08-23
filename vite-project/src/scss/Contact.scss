@@ -1,32 +1,43 @@
+@import './settings/colors';
+@import './settings/fonts';
+@import './settings/base.scss';
+
 .contact-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  align-items: center;
+  margin: 50px 0;
   text-align: center;
 
   .card-single {
+    width: 800px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px rgba(28, 28, 28, 0.3);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 100px;
+    gap: 15px;
+    padding: 30px 0;
     border-radius: 5px;
-    min-width: 400px;
+    color: $basic-dark;
 
     .card-description {
       text-align: center;
       padding: 20px;
-      min-width: 250px;
-    }
+     }
+     
+     .contact-mail{
+      margin: 20px 0;
+      font-weight: 600;
+     }
 
     .card-price {
       font-size: 22px;
       font-weight: bold;
-      padding-top: 10px;
     }
   }
 }
@@ -36,23 +47,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  
   .form-description {
-    margin-bottom: 30px;
-    border: 1px lightblue solid;
-    box-shadow: 0 2px 20px rgba(173, 216, 230, 0.3);
-    padding: 15px;
-    border-radius: 10px;
+    width: 800px;
+    margin-bottom: 40px;
+    background-color: $basic-dark;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
   }
 
   .my-form {
-    max-width: 300px;
-    height: 250px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    width: 800px;
+    padding: 40px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: $basic-dark;
+    color: white;
 
     label {
       display: block;
@@ -67,14 +78,14 @@
       margin-top: 10px;
       font-size: 14px;
       border-radius: 3px;
-      border: 1px solid #ccc;
     }
 
     input[type="submit"] {
       background-color: #8dbaea;
       color: white;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 18px;
       border-radius: 3px;
       border: none;
       cursor: pointer;
