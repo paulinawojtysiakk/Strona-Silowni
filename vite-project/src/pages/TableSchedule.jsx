@@ -121,7 +121,7 @@ function TableSchedule() {
           <div style={{ flex: 1 }}>Zajęcia</div>
           <div style={{ flex: 1 }}>Kiedy</div>
           <div style={{ flex: 1 }}>Czas</div>
-          <div style={{ flex: 1 }}>Dla kogo</div>
+          <div style={{ flex: 1 }}>Poziom</div>
           <div style={{ flex: 1 }}>Cel</div>
           <div style={{ flex: 1 }}>Zapisanych osób</div>
           <div style={{ flex: 1 }}>Wolnych miejsc</div>

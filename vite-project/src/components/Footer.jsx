@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="footer-lists-box">
           <ul className="footer-list">
           <li><Link to="/about">O nas</Link></li>
-          <li><Link to='/pricing'>Oferta dla firm</Link> </li>
+          <li><Link to='/contact'>Oferta dla firm</Link> </li>
             <li><a href='/static/Reg-PF.pdf' target='_blanc'>Regulamin siłowni</a></li>
             <li><a href='/static/PP-PF.pdf' target='_blanc'>Polityka Prywatności</a></li>
           </ul>
