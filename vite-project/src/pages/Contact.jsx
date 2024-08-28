@@ -1,14 +1,14 @@
 import React from "react";
-import {Box, Card, CardContent, Typography} from "@mui/material";
+import {Card, CardContent, Grid, Typography} from "@mui/material";
 import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="container">
+    <div className="container contact-page-container">
       <div className="contact-container">
           <Card
             variant="outlined"
-            className="card-single"          >
+            className="card-contact"          >
             <CardContent>
               <Typography variant="h6">
                 Dział obsługi klienta
@@ -21,13 +21,13 @@ const Contact = () => {
               </Typography>
               <Typography
                 className="card-price"   >
-                780 455 288
+               +48 780 455 288
               </Typography>
             </CardContent>
           </Card>
           <Card
             variant="outlined"
-            className="card-single"   >
+            className="card-contact"   >
             <CardContent>
               <Typography variant="h6" >
                 Kontakt dla firm
@@ -39,7 +39,7 @@ const Contact = () => {
               </Typography>
               <Typography
                 className="card-price">
-                720 345 990
+               +48 720 345 990
               </Typography>
             </CardContent>
           </Card>
