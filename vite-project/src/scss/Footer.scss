@@ -4,7 +4,6 @@
 
 .footer-container{
   width: 100%;
-  padding: 30px 90px;
   background-color: $basic-dark;
   color: white;
   font-family: $sales-font;
@@ -14,6 +13,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 30px 90px;
+
 
   .logo-container{
     display: flex;
@@ -43,6 +44,8 @@
 }
 .footer-lists-box{
   display: flex;
+  flex-wrap: wrap;
+
   gap: 100px;
 
   .footer-list {

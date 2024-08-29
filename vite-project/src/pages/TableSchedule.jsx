@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Button from "@mui/material/Button";
+import '/src/scss/TableSchedule.scss';
 
 const supabase = createClient(
   "https://cythikxqaebbgntxzokp.supabase.co",
@@ -10,7 +11,7 @@ const supabase = createClient(
 
 function TableSchedule() {
   const [gymClasses, setGymClasses] = useState([]);
-  const [showAlert, setShowAlert] = useState(false); //poinformowanie użytkownika o pełnej grupie
+  const [showAlert, setShowAlert] = useState(false); //alert about class being fully booked
 
   useEffect(() => {
     getGymClasses();
@@ -19,7 +20,7 @@ function TableSchedule() {
       .on(
         "postgres_changes",
         {
-          event: "UPDATE", //wybór odpowiedniego eventu z supabase
+          event: "UPDATE", 
           schema: "public",
         },
         (payload) => {
@@ -30,7 +31,7 @@ function TableSchedule() {
       .subscribe();
 
     return () => {
-      channel.unsubscribe(); //funkcja czyści i anuluje subskrypcje channel
+      channel.unsubscribe(); 
     };
   }, []);
 
@@ -40,13 +41,13 @@ function TableSchedule() {
     if (error) {
       console.error("Error getting gym classes", error.message);
     } else {
-      setGymClasses(data); //jeśli nie ma błedu, zrob update
+      setGymClasses(data); 
     }
   }
 
   async function signUpForClass(classId) {
-    const targetClass = gymClasses.find((item) => item.id === classId); //znajdź zajęcia po id
-    const updatedParticipants = targetClass.participants + 1; // Inkrementacja
+    const targetClass = gymClasses.find((item) => item.id === classId); 
+    const updatedParticipants = targetClass.participants + 1; 
 
     if (targetClass.total_places < updatedParticipants) {
       //Jeśli zajęcia są pełne, zwróc error i pokaż komunikat
@@ -103,54 +104,36 @@ function TableSchedule() {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center", padding: "30px", fontSize: "20px" }}>
+      <h2 className="schedule-title">
         <strong>Zajęcia Grupowe</strong>
       </h2>
-      <ul style={{ listStyle: "none" }}>
-        <li
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            borderBottom: "3px solid #ccc",
-            borderTop: "3px solid #ccc",
-            padding: "40px 0",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ flex: 1 }}>Zajęcia</div>
-          <div style={{ flex: 1 }}>Kiedy</div>
-          <div style={{ flex: 1 }}>Czas</div>
-          <div style={{ flex: 1 }}>Poziom</div>
-          <div style={{ flex: 1 }}>Cel</div>
-          <div style={{ flex: 1 }}>Zapisanych osób</div>
-          <div style={{ flex: 1 }}>Wolnych miejsc</div>
-          <div style={{ flex: 1 }}>Zarezerwuj miejsce</div>
+      <ul >
+        <li className="schedule-single-title">
+          <div >Zajęcia</div>
+          <div >Kiedy</div>
+          <div >Czas</div>
+          <div >Poziom</div>
+          <div >Cel</div>
+          <div >Zapisanych osób</div>
+          <div>Wolnych miejsc</div>
+          <div >Zarezerwuj miejsce</div>
         </li>
         {gymClasses.map((gymClass) => (
           <li
-            key={gymClass.id}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              borderBottom: "1px solid #ccc",
-              padding: "15px 0",
-            }}
-          >
-            <div style={{ flex: 1, fontSize: "16px", fontWeight: "bold" }}>
+            key={gymClass.id} className="schedule-class-details"  >
+            <div className="schedule-single-class-title">
               {gymClass.name}
             </div>
-            <div style={{ flex: 1, textAlign: "center" }}>{gymClass.when}</div>
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div>{gymClass.when}</div>
+            <div >
               {gymClass.time} min
             </div>
-            <div style={{ flex: 1 }}>{gymClass.who}</div>
-            <div style={{ flex: 1 }}>{gymClass.goal}</div>
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div >{gymClass.who}</div>
+            <div className="schedule-class-desc">{gymClass.goal}</div>
+            <div >
               {gymClass.participants}
             </div>
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div >
               {Math.max(gymClass.total_places - gymClass.participants, 0)}
             </div>
             <div>
