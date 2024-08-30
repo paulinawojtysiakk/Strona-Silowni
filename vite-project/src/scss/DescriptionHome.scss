@@ -19,6 +19,7 @@
 }
   .desc-home-title-single{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap:10px;
 }
@@ -36,6 +37,7 @@
       padding-left: 20px;
       font-family: $sales-font;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
     }
@@ -51,3 +53,26 @@
     width: auto;
   }
 }
+
+@media screen and (max-width: 768px){
+
+  .container .description-home-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+
+  .desc-home-box{
+    padding-left: 0;
+  }
+    .desc-home-info{
+      padding: 0;
+      text-align: center;
+    }
+   
+    .desc-home-list{
+      padding: 0;
+    }
+  
+ }}
+

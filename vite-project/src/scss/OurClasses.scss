@@ -15,6 +15,7 @@
   .classes-title-box {
     margin: 50px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -86,4 +87,12 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 768px){
+  .container .ourClasses-container{
+  .classes-cards{
+    width: 100%;
+    padding: 10px;
+  }}
 }
