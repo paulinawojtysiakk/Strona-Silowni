@@ -2,35 +2,53 @@
 @import './settings/fonts';
 @import "./settings/base.scss";
 
+.classes-table-schedule{
+    margin-bottom: 70px;
+}
 .schedule-title{
     text-align: center;
     font-size: 20px;
     padding: 30px 0;
 }
-
+  
 .schedule-single-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #ccc;
     border-top: 3px solid #ccc;
-    padding: 40px 5px;
-    text-align: center;
+    font-weight: bold;
+    padding: 40px 0;
 }
 .schedule-class-details{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-    gap: 5px;
+    padding: 25px 0;
       
     .schedule-single-class-title{
         font-size: 16px;
         font-weight: bold;
-    }
-
-    .schedule-class-desc{
-        max-width: 20%;
-    }
+    }  
 }
+.schedule-column{
+    flex: 1;
+    text-align: center;
+}
+
+  .schedule-column-when,
+  .schedule-column-time, 
+ .schedule-column-participants, 
+ .schedule-column-available {
+    flex:0.7;
+  }
+.schedule-column-name,
+  .schedule-column-level,  
+   .schedule-column-reserve
+   {
+    flex: 1; 
+  }
+  .schedule-column-goal{
+    flex:1.5;
+  }
