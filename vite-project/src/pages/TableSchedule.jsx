@@ -103,40 +103,34 @@ function TableSchedule() {
   }
 
   return (
-    <div>
+    <div className="classes-table-schedule">
       <h2 className="schedule-title">
         <strong>Zajęcia Grupowe</strong>
       </h2>
       <ul >
         <li className="schedule-single-title">
-          <div >Zajęcia</div>
-          <div >Kiedy</div>
-          <div >Czas</div>
-          <div >Poziom</div>
-          <div >Cel</div>
-          <div >Zapisanych osób</div>
-          <div>Wolnych miejsc</div>
-          <div >Zarezerwuj miejsce</div>
+          <div className="schedule-column schedule-column-name" >Zajęcia</div>
+          <div  className="schedule-column schedule-column-when" >Kiedy</div>
+          <div className="schedule-column schedule-column-time"  >Czas</div>
+          <div className="schedule-column schedule-column-level"  >Poziom</div>
+          <div  className="schedule-column schedule-column-goal" >Cel zajęć</div>
+          <div  className="schedule-column schedule-column-participants" >Zapisanych osób</div>
+          <div className="schedule-column schedule-column-available" >Wolnych miejsc</div>
+          <div  className="schedule-column schedule-column-reserve" >Zarezerwuj miejsce</div>
         </li>
         {gymClasses.map((gymClass) => (
           <li
             key={gymClass.id} className="schedule-class-details"  >
-            <div className="schedule-single-class-title">
-              {gymClass.name}
-            </div>
-            <div>{gymClass.when}</div>
-            <div >
-              {gymClass.time} min
-            </div>
-            <div >{gymClass.who}</div>
-            <div className="schedule-class-desc">{gymClass.goal}</div>
-            <div >
-              {gymClass.participants}
-            </div>
-            <div >
+           <div className="schedule-column schedule-column-name  schedule-single-class-title">{gymClass.name}</div>
+            <div className="schedule-column schedule-column-when">{gymClass.when}</div>
+            <div className="schedule-column schedule-column-time">{gymClass.time} min</div>
+            <div className="schedule-column schedule-column-level">{gymClass.who}</div>
+            <div className="schedule-column schedule-column-goal">{gymClass.goal}</div>
+            <div className="schedule-column schedule-column-participants">{gymClass.participants}</div>
+            <div className="schedule-column schedule-column-available">
               {Math.max(gymClass.total_places - gymClass.participants, 0)}
             </div>
-            <div>
+            <div className="schedule-column schedule-column-reserve">
               {gymClass.signed_up ? (
                 <div>
                   <div style={{ maxWidth: "130px", paddingBottom: "10px" }}>
