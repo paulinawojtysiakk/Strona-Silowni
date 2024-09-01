@@ -133,7 +133,7 @@ function TableSchedule() {
             <div className="schedule-column schedule-column-reserve">
               {gymClass.signed_up ? (
                 <div>
-                  <div style={{ maxWidth: "130px", paddingBottom: "10px" }}>
+                  <div className="reserved-info">
                     Twoje miejsce zostało zarezerwowane
                   </div>
                   <Button
@@ -165,6 +165,8 @@ function TableSchedule() {
       </ul>
     </div>
   );
+
 }
+
 
 export default TableSchedule;

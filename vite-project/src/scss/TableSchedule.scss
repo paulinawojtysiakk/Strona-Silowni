@@ -52,3 +52,23 @@
   .schedule-column-goal{
     flex:1.5;
   }
+
+  .reserved-info{
+    max-width: 130px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 768px){
+    .schedule-column-name,
+    .schedule-column-when,
+    .schedule-column-available,
+    .schedule-column-reserve{
+      display: block;
+    }
+    .schedule-column-goal,
+    .schedule-column-participants,
+    .schedule-column-level{
+      display: none;
+    }
+
+  }
