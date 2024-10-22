@@ -135,10 +135,22 @@
   .contact-page-container {
     flex-direction: column; 
     align-items: center;
+
+    .contact-container{
+      max-width: 80%;
+      .card-contact{
+        padding: 5px;
+        .card-description{
+          padding: 10px 0;
+        }
+        .contact-mail{
+          padding: 0;
+        }
+      }
+    }
+    .form-box {
+      max-width: 80%; 
+    }
   }
 
-  .contact-container,
-  .form-box {
-    max-width: 100%; 
-  }
 }

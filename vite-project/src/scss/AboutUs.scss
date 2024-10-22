@@ -59,3 +59,11 @@
     }
   }
 }
+
+@media ( max-width: 768px){
+  .about-us-container{
+    .about-us-text{
+    display: flex;
+    flex-direction: column;
+  }}
+}
