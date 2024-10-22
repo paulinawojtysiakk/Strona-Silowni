@@ -36,7 +36,6 @@ function TableSchedule() {
   }, []);
 
   async function getGymClasses() {
-    //metoda from do zaciągnięcia gymClasses
     const { data, error } = await supabase.from("gymClasses").select();
     if (error) {
       console.error("Error getting gym classes", error.message);
@@ -70,7 +69,7 @@ function TableSchedule() {
         console.log("Signed up successfully");
         const updatedClasses = gymClasses.map(
           (
-            item, //zmapuj zaktualizaowane zajęcia
+            item,
           ) => (item.id === gymClass.id ? gymClass : item), //porównaj id z signupu do id w bazie i update
         );
         setGymClasses(updatedClasses);
@@ -80,7 +79,7 @@ function TableSchedule() {
 
   async function cancelSignUpForClass(classId) {
     const targetClass = gymClasses.find((item) => item.id === classId);
-    const updatedParticipants = Math.max(targetClass.participants - 1, 0); // Dekrementacja
+    const updatedParticipants = Math.max(targetClass.participants - 1, 0); 
 
     const { data: gymClass, error } = await supabase
       .from("gymClasses")
@@ -132,7 +131,7 @@ function TableSchedule() {
             </div>
             <div className="schedule-column schedule-column-reserve">
               {gymClass.signed_up ? (
-                <div>
+                <div className="reserved-box">
                   <div className="reserved-info">
                     Twoje miejsce zostało zarezerwowane
                   </div>

@@ -37,7 +37,7 @@
   position: absolute;
   top: 80px;
   right: 0px;
-  background-color: #eefeff;
+  background-color: $basic-dark;
   width: 100%;
   padding: 20px;
   z-index: 10;
@@ -59,7 +59,7 @@
       }
       a {
         text-decoration: none;
-        color: #333;
+        color: white;
         font-weight: bold;
       }
     }
