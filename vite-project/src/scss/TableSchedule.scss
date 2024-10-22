@@ -57,6 +57,12 @@
     max-width: 130px;
     padding-bottom: 10px;
   }
+  .reserved-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media (max-width: 768px){
     .schedule-column-name,

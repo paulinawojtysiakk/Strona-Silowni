@@ -15,6 +15,7 @@ const App = () => {
     <BrowserRouter>
       <HamburgerMenu />
       <Header />
+      <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      </main>
       <Footer />
     </BrowserRouter>
   );
