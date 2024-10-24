@@ -71,6 +71,11 @@
     .schedule-column-reserve{
       display: block;
     }
+
+    .nameInput{
+      max-width: 110px;
+      text-wrap: wrap;
+    }
     .schedule-column-goal,
     .schedule-column-participants,
     .schedule-column-level{
