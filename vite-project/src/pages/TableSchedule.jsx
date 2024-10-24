@@ -12,6 +12,8 @@ const supabase = createClient(
 function TableSchedule() {
   const [gymClasses, setGymClasses] = useState([]);
   const [showAlert, setShowAlert] = useState(false); //alert about class being fully booked
+  const [userName, setUserName] = useState("");
+  const [selectedClassId, setSelectedClassId] = useState(null);
 
   useEffect(() => {
     getGymClasses();
@@ -59,6 +61,7 @@ function TableSchedule() {
         .update({
           signed_up: true,
           participants: updatedParticipants,
+          user_name: userName,
         })
         .eq("id", classId) //znajdź match id i classid w bazie
         .single();
@@ -73,6 +76,7 @@ function TableSchedule() {
           ) => (item.id === gymClass.id ? gymClass : item), //porównaj id z signupu do id w bazie i update
         );
         setGymClasses(updatedClasses);
+        setUserName("");
       }
     }
   }
@@ -86,6 +90,7 @@ function TableSchedule() {
       .update({
         signed_up: false,
         participants: updatedParticipants,
+        user_name: null,
       })
       .eq("id", classId)
       .single();
@@ -143,12 +148,25 @@ function TableSchedule() {
                   </Button>
                 </div>
               ) : (
+                <div>
+                  <input 
+                  type="text"
+                  placeholder="Podaj swoje imię"
+                  value={selectedClassId === gymClass.id ? userName: ""}
+                  onChange={(e) => setUserName(e.target.value)}
+                  onFocus={() => setSelectedClassId(gymClass.id)}
+                  style={{ padding:"5px", textAlign:"center"}}
+                  className="nameInput"
+                  />
                 <Button
                   variant="outlined"
                   onClick={() => signUpForClass(gymClass.id)}
+                  disabled={!userName || selectedClassId !== gymClass.id} //disable button if name is empty
                 >
                   Zapisuję się!
                 </Button>
+                </div>
+
               )}
             </div>
 
