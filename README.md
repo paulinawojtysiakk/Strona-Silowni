@@ -6,10 +6,10 @@ Home page
 
 <img width="1440" alt="Screenshot 2024-10-24 at 16 29 07" src="https://github.com/user-attachments/assets/82779e95-c709-403c-8bf1-e883c96c3396">
 
-Page for sigining up for classes
+Page for sigining up for classes - Supabase database
 
 <img width="1437" alt="Screenshot 2024-10-24 at 16 28 39" src="https://github.com/user-attachments/assets/5a7d6ba4-d441-4c5e-b1cf-fb5e35387e5e">
 
-Contact page with a form 
+Contact page with a form - data stored in google spreasheet
 
 <img width="1440" alt="Screenshot 2024-10-24 at 16 29 35" src="https://github.com/user-attachments/assets/ae1502c5-cc9c-4a31-93b7-33e015681049">
