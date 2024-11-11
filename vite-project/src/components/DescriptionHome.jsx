@@ -55,9 +55,7 @@ const DescriptionHome = () => {
           </CardContent>
         </Card>
 
-        {/* <div className="desc-home-img" >
-            <img src={equipment} alt="gym-equipment" className="equip-img" />
-          </div> */}
+      
     </>
   );
 };
