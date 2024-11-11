@@ -1,5 +1,5 @@
 import React from "react";
-import TableSchedule from "./TableSchedule";
+import TableSchedule from "/src/components/TableSchedule.jsx";
 import "/src/scss/Schedule.scss";
 
 const Schedule = () => {

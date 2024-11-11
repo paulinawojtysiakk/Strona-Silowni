@@ -6,6 +6,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import emptygym from "../images/emptygym.jpeg";
 import equipment from "../images/equipment.jpeg";
 import yoga from "../images/yoga.jpeg";
+import workout from "../images/workout2.png"
+import gymview from "../images/gym-view.webp"
 import CardsSection from "./CardsSection.jsx";
 import OurClasses from "./OurClasses.jsx";
 import DescriptionHome from "./DescriptionHome.jsx";
@@ -13,7 +15,7 @@ import HomeCarousel from "./Carousel.jsx";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const images = [emptygym, equipment, yoga];
+  const images = [gymview, workout, yoga];
 
   return (
     <>

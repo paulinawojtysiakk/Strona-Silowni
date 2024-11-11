@@ -11,13 +11,13 @@ const supabase = createClient(
 
 function TableSchedule() {
   const [gymClasses, setGymClasses] = useState([]);
-  const [showAlert, setShowAlert] = useState(false); //alert about class being fully booked
+  const [showAlert, setShowAlert] = useState(false);
   const [userName, setUserName] = useState("");
   const [selectedClassId, setSelectedClassId] = useState(null);
 
   useEffect(() => {
     getGymClasses();
-    const channel = supabase //ustawienie subskrybcji i updateu z bazy
+    const channel = supabase 
       .channel("gymClasses")
       .on(
         "postgres_changes",
@@ -51,11 +51,9 @@ function TableSchedule() {
     const updatedParticipants = targetClass.participants + 1; 
 
     if (targetClass.total_places < updatedParticipants) {
-      //Jeśli zajęcia są pełne, zwróc error i pokaż komunikat
       console.log("class is fully booked");
       setShowAlert(true);
     } else {
-      //jeśli są miejsca, zrób update bazy
       const { data: gymClass, error } = await supabase
         .from("gymClasses")
         .update({
@@ -63,7 +61,7 @@ function TableSchedule() {
           participants: updatedParticipants,
           user_name: userName,
         })
-        .eq("id", classId) //znajdź match id i classid w bazie
+        .eq("id", classId) 
         .single();
 
       if (error) {
@@ -73,7 +71,7 @@ function TableSchedule() {
         const updatedClasses = gymClasses.map(
           (
             item,
-          ) => (item.id === gymClass.id ? gymClass : item), //porównaj id z signupu do id w bazie i update
+          ) => (item.id === gymClass.id ? gymClass : item), 
         );
         setGymClasses(updatedClasses);
         setUserName("");
@@ -155,13 +153,13 @@ function TableSchedule() {
                   value={selectedClassId === gymClass.id ? userName: ""}
                   onChange={(e) => setUserName(e.target.value)}
                   onFocus={() => setSelectedClassId(gymClass.id)}
-                  style={{ padding:"5px", textAlign:"center"}}
+                  style={{ padding:"5px", marginBottom:"5px", textAlign:"center", border:"1px solid lightgrey", borderRadius:"5px"}}
                   className="nameInput"
                   />
                 <Button
                   variant="outlined"
                   onClick={() => signUpForClass(gymClass.id)}
-                  disabled={!userName || selectedClassId !== gymClass.id} //disable button if name is empty
+                  disabled={!userName || selectedClassId !== gymClass.id} 
                 >
                   Zapisuję się!
                 </Button>
@@ -170,7 +168,7 @@ function TableSchedule() {
               )}
             </div>
 
-            {showAlert && ( // Komunikat o pełnej grupie
+            {showAlert && ( 
               <div className="alert">
                 Niestety, wszystkie miejsca są zajęte. Możesz umówić się
                 telefonicznie na kolejną sesję!
