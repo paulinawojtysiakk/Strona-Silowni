@@ -1,7 +1,6 @@
 import React from "react";
 import {Card, CardContent, Typography} from "@mui/material";
 import "/src/scss/DescriptionHome.scss";
-import equipment from "../images/equipment.jpeg";
 import DescriptionIcon from '@mui/icons-material/Description';
 import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
