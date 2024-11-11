@@ -1,7 +1,6 @@
 import React from "react";
 import {Typography} from "@mui/material";
 import "/src/scss/Footer.scss";
-import logo2 from "../images/logo2.png";
 import { Link } from "react-router-dom";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -15,7 +14,6 @@ const Footer = () => {
         <div className="footer-box">
           <div className="logo-container">
           <Typography className="footer-logo">Pieniny Fitness<FitnessCenterIcon/></Typography>
-          {/* <img src={logo2} alt="logo" className="logo" /> */}
           <Typography className="footer-address">Nasz adres:<br/>
             ul. Grotowskiego 4 <br/> 34-450<br/> Krościenko nad Dunajcem</Typography>
           </div>

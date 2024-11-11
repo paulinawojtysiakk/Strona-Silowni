@@ -39,7 +39,7 @@ const ContactForm = () => {
       });
       setNotification("Twój email został wysłany");
       setIsModalOpen(true);
-      setInputs({}); //clear the form inputs
+      setInputs({}); 
     }
     catch (error){
       console.log("error")
